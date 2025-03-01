@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         glue = "steps",
         dryRun = false,
         plugin = {"pretty"},
-        tags = "@common or @Grp1"
+        tags = "@common and @Grp1"
 )
 public class testRunners {
 }
