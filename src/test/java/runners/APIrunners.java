@@ -6,13 +6,16 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 
+
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/feature/",
-        glue = "steps",
-        dryRun = false,
+        features = "src/test/resources/feature",
+        glue = "APISteps",
+        dryRun = true,
         plugin = {"pretty"},
-        tags = "@common"
+        tags = "@validAPI or @invalid"
 )
-public class testRunners {
+
+public class APIrunners {
+
 }
