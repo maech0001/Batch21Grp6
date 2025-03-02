@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/feature",
         glue = "APISteps",
-        dryRun = true,
+        dryRun = false,
         plugin = {"pretty"},
         tags = "@validAPI or @invalid"
 )
