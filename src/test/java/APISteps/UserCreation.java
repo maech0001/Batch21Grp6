@@ -34,7 +34,7 @@ public class UserCreation {
     public void a_request_payload_is_prepared_for_user_creation() {
         userCreation=given().header(APIconstants.CONTENT_TYPE_KEY, APIconstants.CONTENT_TYPE_VALUE).header(APIconstants.AUTHORIZATION_KEY, "token").body("{\n" +
                 "  \"name\": \"adminbatch21\",\n" +
-                "  \"email\": \"syntaxadmin03@test.com\",\n" +
+                "  \"email\": \"syntaxAdmin002@test.com\",\n" +
                 "  \"password\": \"Test@123\"\n" +
                 "}");
     }
@@ -43,12 +43,12 @@ public class UserCreation {
         response=userCreation.when().post(APIconstants.CREATE_USER);
         response.prettyPrint();
     }
-    @Then("status code int is expected to be returned")
-    public void status_code_int_is_expected_to_be_returned(Integer expectedStatusCode) {
+    @Then("status code {int} is expected to be returned")
+    public void status_code_is_expected_to_be_returned(Integer expectedStatusCode) {
         response.then().assertThat().statusCode(expectedStatusCode);
     }
-    @Then("the response message returned should be string")
-    public void the_response_message_returned_should_be_string(String key, String expectedValue) {
+    @Then("the response {string} returned is {string}")
+    public void the_response_returned_is(String key, String expectedValue) {
         response.then().assertThat().body(key, equalTo(expectedValue));
     }
 
@@ -87,5 +87,15 @@ public class UserCreation {
                 "  \"email\": \"admin428@test.com\",\n" +
                 "  \"password\": \"Test@123\"\n" +
                 "}");
+    }
+
+    @Then("an error response message returned should be as a string")
+    public void an_error_response_message_returned_should_be_as_a_string(String key, String expectedValue) {
+        response.then().assertThat().body(key, equalTo(expectedValue));
+    }
+
+    @Then("an error response {string} returned is {string}")
+    public void an_error_response_returned_is(String key, String expectedValue) {
+        response.then().assertThat().body(key, equalTo(expectedValue));
     }
 }

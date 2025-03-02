@@ -18,7 +18,7 @@ public class APItest {
     public void createUser(){
         RequestSpecification userCreation=given().header("Content-Type", "application/json").header("Authorization", "token").body("{\n" +
                 "  \"name\": \"adminbatch21\",\n" +
-                "  \"email\": \"syntaxadmin03@test.com\",\n" +
+                "  \"email\": \"syntaxadmin04@test.com\",\n" +
                 "  \"password\": \"Test@123\"\n" +
                 "}");
 
